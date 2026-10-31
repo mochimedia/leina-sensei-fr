@@ -1,1 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Léïna · Contact</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --washi:#FCF7EF; --shu:#DE4632; --shu-deep:#BE3826;
+    --sumi:#2A241F; --ink:#6E6357; --ink-2:#8C8275; --gold:#E0A63A;
+    --line:rgba(42,36,31,.10); --shadow-sm:0 8px 22px -14px rgba(60,40,30,.30);
+    --display:'Fredoka',system-ui,sans-serif; --body:'Nunito',system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:var(--body);color:var(--sumi);background:var(--washi);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  h1{font-family:var(--display);font-weight:600;line-height:1.08;letter-spacing:-.01em}
+  a{color:inherit;text-decoration:none}
+  .accent{color:var(--shu)}
+  .wrap{max-width:1280px;margin:0 auto;padding:0 24px}
 
+
+  /* Boutons */
+  .btn{display:inline-flex;align-items:center;gap:.55em;font-family:var(--body);font-weight:800;font-size:1.05rem;padding:1em 1.7em;border-radius:999px;border:none;cursor:pointer;transition:transform .18s ease, box-shadow .18s ease, background .18s ease}
+  .btn-primary{background:var(--shu);color:#fff;box-shadow:0 12px 26px -12px rgba(222,70,50,.7)}
+  .btn-primary:hover{background:var(--shu-deep);transform:translateY(-2px)}
+
+  /* Hero contact */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;text-align:center;padding:40px 0 52px;overflow:hidden}
+  .hinomaru{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:min(620px,90vw);height:min(620px,90vw);border-radius:50%;background:radial-gradient(circle at 50% 45%, rgba(222,70,50,.16), rgba(222,70,50,.06) 55%, transparent 70%);z-index:0}
+  .kana-vert{position:absolute;top:80px;right:max(24px,6vw);writing-mode:vertical-rl;font-family:var(--display);font-weight:500;font-size:1.05rem;letter-spacing:.3em;color:rgba(222,70,50,.4);z-index:0}
+  .hero .wrap{position:relative;z-index:1}
+  .pill-badge{display:inline-flex;align-items:center;gap:.5em;background:#fff;border:1px solid var(--line);padding:.55em 1.1em;border-radius:999px;font-weight:700;font-size:.85rem;letter-spacing:.14em;text-transform:uppercase;color:var(--shu);box-shadow:var(--shadow-sm);margin-bottom:1.6rem}
+  .hero h1{font-size:clamp(2.3rem,5.6vw,3.8rem);max-width:18ch;margin:0 auto 1.2rem}
+  .hero p.sub{font-size:clamp(1.05rem,1.6vw,1.22rem);color:var(--ink);max-width:40rem;margin:0 auto 2.4rem}
+
+  /* Carte e-mail */
+  .mailcard{background:#fff;border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow-sm);padding:2.4rem 2rem;max-width:30rem;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:1.1rem}
+  .mailcard .label{font-weight:700;color:var(--ink-2);font-size:.85rem;letter-spacing:.14em;text-transform:uppercase}
+  .mailcard .addr{font-family:var(--display);font-weight:500;font-size:clamp(1.25rem,3.2vw,1.7rem);color:var(--shu)}
+  .reply{margin-top:1.8rem;color:var(--ink-2);font-size:.92rem;font-weight:600}
+  .reply .dot{color:var(--shu)}
+
+  @media(max-width:560px){ .kana-vert{display:none} .hero{min-height:auto;padding:32px 0 44px} }
+  @media(prefers-reduced-motion:reduce){*{transition:none!important}}
+  :focus-visible{outline:3px solid var(--shu);outline-offset:2px;border-radius:6px}
+</style>
+</head>
+<body>
+
+
+<!-- ============ HERO CONTACT ============ -->
+<section class="hero">
+  <div class="hinomaru" aria-hidden="true"></div>
+  <div class="kana-vert" aria-hidden="true">連絡</div>
+  <div class="wrap">
+    <span class="pill-badge">Contact</span>
+    <h1>Une question ? <span class="accent">Écris-nous.</span></h1>
+    <p class="sub">Tu souhaites nous poser une question, en savoir plus sur l'accompagnement ou simplement échanger sur ton projet en japonais ? Écris-nous, on te répond avec plaisir.</p>
+
+    <div class="mailcard">
+      <span class="label">Notre e-mail</span>
+      <span class="addr">leina@leina-sensei.fr</span>
+      <a href="mailto:leina@leina-sensei.fr" class="btn btn-primary">✉️ Nous envoyer un message</a>
+    </div>
+
+    <p class="reply"><span class="dot">●</span> On répond généralement sous 24 à 48 h.</p>
+  </div>
+</section>
+
+</body>
+</html>
