@@ -4,9 +4,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Mon histoire | Léïna Sensei</title>
-<meta name="description" content="Découvre l’histoire de Léïna Sensei et son parcours autour du japonais.">
+<meta name="description" content="Découvre l'histoire de Léïna Sensei et son parcours autour du japonais.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,71 +18,45 @@ body {
   font-family: 'Manrope', sans-serif;
   color: #1B1F2A;
 }
+
 .ls-page {
   width: 100%;
-  margin: 0;
   overflow-x: hidden;
   background: #F7F4EE;
   -webkit-font-smoothing: antialiased;
 }
+
 .ls-page *,
 .ls-page *::before,
 .ls-page *::after {
   box-sizing: border-box;
 }
+
 .ls-page h1,
 .ls-page h2,
-.ls-page h3,
-.ls-page p,
-.ls-page ul,
-.ls-page ol,
-.ls-page figure,
-.ls-page blockquote {
+.ls-page h3 {
+  font-family: 'Shippori Mincho', serif;
   text-transform: none;
 }
+
 .ls-page img {
   max-width: 100%;
 }
-.ls-page h1,
-.ls-page h2,
-.ls-page h3,
-.ls-page h4 {
-  font-family: 'Shippori Mincho', serif;
-}
+
 .ls-page a {
-  color: #B5361F;
+  transition: opacity .2s ease, color .2s ease;
 }
+
 .ls-page a:hover {
-  color: #8E2A18;
   opacity: .92;
 }
-.ls-page summary {
-  cursor: pointer;
-  list-style: none;
-}
-.ls-page summary::-webkit-details-marker {
-  display: none;
-}
-.ls-page details[open] summary span {
-  transform: rotate(45deg);
-}
-.ls-page summary span {
-  transition: transform .2s ease;
-  display: inline-block;
-}
-.ls-page input:focus,
-.ls-page button:focus-visible,
+
 .ls-page a:focus-visible {
   outline: 2px solid #B5361F;
-  outline-offset: 2px;
+  outline-offset: 3px;
 }
-@media (max-width: 640px) {
-  .ls-page section {
-    padding-left: 16px !important;
-    padding-right: 16px !important;
-  }
-}
-.ls-page .ls-photo {
+
+.ls-photo {
   background-color: #EDE4D8;
   background-image: url("/leina-portrait.png");
   background-size: contain;
@@ -91,38 +64,60 @@ body {
   background-repeat: no-repeat;
   border-radius: 20px;
 }
-.ls-page {
-  width: 100%;
-  margin-left: 0;
-  margin-right: 0;
-}
-.ls-page section,
-.ls-page header,
-.ls-page footer {
-  width: 100%;
-}
-.ls-page a {
-  transition: opacity .2s ease, color .2s ease;
-}
-@media (max-width: 640px) {
-  .ls-page {
-    overflow-x: hidden;
-  }
-  .ls-page img {
-    height: auto;
-  }
-}
-.ls-page .ls-photo2 {
+
+.ls-photo2 {
   background-image: url("/leina-japon.png");
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
 }
+
+.ls-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  padding: 18px 30px;
+  border-radius: 999px;
+  font-family: 'Manrope', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+  text-align: center;
+  text-decoration: none;
+}
+
+.ls-button-light {
+  background: #FFFFFF;
+  color: #B5361F !important;
+}
+
+.ls-button-red {
+  background: #B5361F;
+  color: #FFFFFF !important;
+}
+
+@media (max-width: 640px) {
+  .ls-page section {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  .ls-cta-content {
+    padding: 36px 24px !important;
+  }
+
+  .ls-button {
+    width: 100%;
+    padding: 18px 20px;
+    font-size: 15px;
+  }
+}
 </style>
 </head>
 
 <body>
-<div class="ls-page" style="font-family:'Manrope',system-ui,sans-serif;color:#1B1F2A;background:#F7F4EE">
+<div class="ls-page">
 
 <!-- NAVIGATION -->
 <header>
@@ -159,15 +154,15 @@ body {
     Mon histoire
   </p>
 
-  <h1 style="margin:0;font-family:'Shippori Mincho',serif;font-weight:700;font-size:clamp(44px,5.6vw,72px);line-height:1.1;letter-spacing:-.02em;color:#1B1F2A">
+  <h1 style="margin:0;font-weight:700;font-size:clamp(44px,5.6vw,72px);line-height:1.1;letter-spacing:-.02em;color:#1B1F2A">
     Qui suis-je ?
   </h1>
 
   <p style="margin:0;font-size:19px;line-height:1.7;color:#3B404C;max-width:640px">
     Je t'aide à apprendre le japonais avec des cours simples, vivants et un
-    <strong style="font-weight:700;color:#1B1F2A">vrai accompagnement pas-à-pas</strong>.
+    <strong style="color:#1B1F2A">vrai accompagnement pas-à-pas</strong>.
     Oui, c'est possible de
-    <strong style="font-weight:700;color:#1B1F2A">progresser en japonais</strong>
+    <strong style="color:#1B1F2A">progresser en japonais</strong>
     en prenant du
     <span style="color:#B5361F;font-weight:700">plaisir</span> :
     plusieurs milliers de personnes l'ont déjà fait.
@@ -181,10 +176,12 @@ body {
 
 <!-- MON PARCOURS -->
 <section style="background:#FFFFFF;border-top:1px solid #EADFD3;border-bottom:1px solid #EADFD3">
+
   <div style="max-width:1100px;margin:0 auto;padding:88px 24px;display:flex;flex-wrap:wrap;gap:56px;align-items:center">
 
     <div style="flex:1 1 420px;min-width:0;display:flex;justify-content:center">
       <div style="position:relative;width:100%;max-width:480px;background:#FFEEE6;border-radius:18px;padding:32px 20px 0;overflow:hidden">
+
         <div class="ls-photo2"
              role="img"
              aria-label="Léïna devant un ordinateur montrant une pagode au Japon"
@@ -195,7 +192,7 @@ body {
 
     <div style="flex:1 1 420px;min-width:0;display:flex;flex-direction:column;gap:18px">
 
-      <h2 style="margin:0;font-family:'Shippori Mincho',serif;font-weight:700;font-size:clamp(30px,3.2vw,42px);line-height:1.15;color:#1B1F2A">
+      <h2 style="margin:0;font-size:clamp(30px,3.2vw,42px);line-height:1.15;color:#1B1F2A">
         J'ai grandi entre la France et le Japon
       </h2>
 
@@ -206,17 +203,16 @@ body {
 
       <p style="margin:0;font-size:17px;line-height:1.7;color:#4A4F5C">
         Pour l'anecdote, à deux ans, mon grand-père japonais m'a
-        <strong style="font-weight:700;color:#B5361F">interdit</strong>
+        <strong style="color:#B5361F">interdit</strong>
         de revenir au Japon tant que je ne parlais pas
-        <strong style="font-weight:700;color:#1B1F2A">couramment la langue</strong>.
+        <strong style="color:#1B1F2A">couramment la langue</strong>.
       </p>
 
       <p style="margin:0;font-size:17px;line-height:1.7;color:#4A4F5C">
         Franco-japonaise, j'ai donc voyagé et vécu
-        <strong style="font-weight:700;color:#1B1F2A">entre ces deux pays</strong>
+        <strong style="color:#1B1F2A">entre ces deux pays</strong>
         depuis toute petite, jusqu'à mes 18 ans.
       </p>
-
     </div>
   </div>
 </section>
@@ -224,7 +220,7 @@ body {
 <!-- MES PREMIERS COURS -->
 <section style="max-width:760px;margin:0 auto;padding:96px 24px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:22px">
 
-  <h2 style="margin:0;font-family:'Shippori Mincho',serif;font-weight:700;font-size:clamp(30px,3.2vw,42px);line-height:1.15;color:#1B1F2A">
+  <h2 style="margin:0;font-size:clamp(30px,3.2vw,42px);line-height:1.15;color:#1B1F2A">
     Le drame et les débuts de l'enseignement
   </h2>
 
@@ -265,11 +261,12 @@ body {
 
 <!-- L'ENSEIGNEMENT -->
 <section style="background:#EFE9DF">
+
   <div style="max-width:1000px;margin:0 auto;padding:96px 24px;display:flex;flex-direction:column;gap:48px">
 
     <div style="max-width:760px;margin:0 auto;display:flex;flex-direction:column;align-items:center;text-align:center;gap:22px">
 
-      <h2 style="margin:0;font-family:'Shippori Mincho',serif;font-weight:700;font-size:clamp(30px,3.2vw,42px);line-height:1.15;color:#1B1F2A">
+      <h2 style="margin:0;font-size:clamp(30px,3.2vw,42px);line-height:1.15;color:#1B1F2A">
         Je suis tombée amoureuse de l'enseignement
       </h2>
 
@@ -354,15 +351,15 @@ body {
   </div>
 </section>
 
-<!-- COURS PARTICULIERS -->
-<section aria-labelledby="ch4" style="padding:96px 24px;display:flex;justify-content:center">
+<!-- PRÉSENTATION DES COURS PARTICULIERS -->
+<section style="padding:96px 24px;display:flex;justify-content:center">
 
-  <div style="position:relative;overflow:hidden;max-width:1000px;width:100%;background:#B5361F;color:#FFFFFF;border-radius:18px;display:flex;flex-wrap:wrap;align-items:stretch">
+  <div style="overflow:hidden;max-width:1000px;width:100%;background:#B5361F;color:#FFFFFF;border-radius:18px;display:flex;flex-wrap:wrap;align-items:stretch">
 
-    <div style="position:relative;flex:1 1 520px;min-width:0;padding:56px;display:flex;flex-direction:column;gap:20px;align-items:flex-start">
+    <div class="ls-cta-content"
+         style="flex:1 1 520px;min-width:0;padding:56px;display:flex;flex-direction:column;gap:20px;align-items:flex-start">
 
-      <h2 id="ch4"
-          style="margin:0;font-family:'Shippori Mincho',serif;font-weight:700;font-size:clamp(30px,3.4vw,44px);line-height:1.12;color:#FFFFFF">
+      <h2 style="margin:0;font-size:clamp(30px,3.4vw,44px);line-height:1.12;color:#FFFFFF">
         Zero to Japan devient Léïna Sensei.
       </h2>
 
@@ -375,18 +372,15 @@ body {
         construit autour de leur objectif.
       </p>
 
-      <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;padding-top:8px">
+      <!-- PREMIER BOUTON -->
+      <a href="/cours-particuliers/" class="ls-button ls-button-light">
+        Je veux rejoindre les cours particuliers
+      </a>
 
-        <a href="/cours-particuliers/"
-           style="background:#FFFFFF;color:#B5361F;text-decoration:none;padding:16px 28px;border-radius:999px;font-weight:700;font-size:16px;min-height:52px;display:inline-flex;align-items:center">
-          Je veux rejoindre les cours particuliers
-        </a>
-
-        <a href="/"
-           style="color:#FFFFFF;font-weight:600;font-size:16px;padding:14px 6px;min-height:44px;display:inline-flex;align-items:center">
-          Retour à l'accueil →
-        </a>
-      </div>
+      <a href="/"
+         style="color:#FFFFFF;font-weight:600;font-size:16px;padding:10px 0;text-decoration:underline">
+        Retour à l'accueil →
+      </a>
     </div>
 
     <!-- PHOTO DE LÉÏNA -->
@@ -400,12 +394,30 @@ body {
   </div>
 </section>
 
+<!-- DEUXIÈME BOUTON, VISIBLE EN BAS DE PAGE -->
+<section style="padding:20px 24px 88px;text-align:center;background:#F7F4EE">
+
+  <h2 style="margin:0 0 16px;font-size:clamp(26px,3vw,36px);color:#1B1F2A">
+    Et si on apprenait le japonais ensemble ?
+  </h2>
+
+  <p style="margin:0 auto 28px;max-width:580px;font-size:17px;line-height:1.7;color:#4A4F5C">
+    Des cours adaptés à ton niveau, à ton rythme et à tes objectifs,
+    pour enfin oser parler japonais.
+  </p>
+
+  <a href="/cours-particuliers/" class="ls-button ls-button-red">
+    Je veux rejoindre les cours particuliers
+  </a>
+</section>
+
 <!-- PIED DE PAGE -->
 <footer style="background:#1B1F2A;color:#FFFFFF;padding:56px 24px 28px">
 
   <div style="max-width:1000px;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:space-between;gap:36px">
 
     <div style="max-width:360px">
+
       <a href="/"
          style="font-family:'Shippori Mincho',serif;font-size:26px;font-weight:800;color:#FFFFFF;text-decoration:none">
         Léïna Sensei
@@ -418,15 +430,28 @@ body {
     </div>
 
     <div style="display:flex;flex-direction:column;gap:14px">
+
       <strong style="font-size:15px">Navigation</strong>
 
-      <a href="/" style="color:#C3C8D6;text-decoration:none">Accueil</a>
-      <a href="/mon-histoire/" style="color:#C3C8D6;text-decoration:none">Mon histoire</a>
-      <a href="/cours-particuliers/" style="color:#C3C8D6;text-decoration:none">Cours particuliers</a>
-      <a href="/contact/" style="color:#C3C8D6;text-decoration:none">Contact</a>
+      <a href="/" style="color:#C3C8D6;text-decoration:none">
+        Accueil
+      </a>
+
+      <a href="/mon-histoire/" style="color:#C3C8D6;text-decoration:none">
+        Mon histoire
+      </a>
+
+      <a href="/cours-particuliers/" style="color:#C3C8D6;text-decoration:none">
+        Cours particuliers
+      </a>
+
+      <a href="/contact/" style="color:#C3C8D6;text-decoration:none">
+        Contact
+      </a>
     </div>
 
     <div style="display:flex;flex-direction:column;gap:14px">
+
       <strong style="font-size:15px">Une question ?</strong>
 
       <a href="mailto:leina@leina-sensei.fr"
