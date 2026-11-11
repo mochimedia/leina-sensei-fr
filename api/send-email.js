@@ -1,7 +1,8 @@
 
-import { readFile } from "node:fs/promises";
+const { readFile } = require("node:fs/promises");
+const path = require("node:path");
 
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
   if (req.method !== "POST") {
     return res.status(405).json({
       error: "Méthode non autorisée"
@@ -24,9 +25,9 @@ export default async function handler(req, res) {
   }
 
   try {
-    const pdf = await readFile(
-      new URL("../guide-japonais.pdf", import.meta.url)
-    );
+   const pdf = await readFile(
+  path.join(process.cwd(), "guide-japonais.pdf")
+);
 
     const response = await fetch(
       "https://api.postmarkapp.com/email",
