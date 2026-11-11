@@ -9,10 +9,12 @@ module.exports = async function handler(req, res) {
     });
   }
 
-  const auth = req.headers.authorization;
   const secret = process.env.EMAIL_TEST_SECRET;
 
-  if (!secret || auth !== `Bearer ${secret}`) {
+  if (
+    !secret ||
+    req.headers.authorization !== `Bearer ${secret}`
+  ) {
     return res.status(401).json({
       error: "Non autorisé"
     });
@@ -25,12 +27,12 @@ module.exports = async function handler(req, res) {
   }
 
   try {
-   const pdf = await readFile(
-  path.join(process.cwd(), "guide-japonais.pdf")
-);
+    const pdf = await readFile(
+      path.join(process.cwd(), "guide-japonais.pdf")
+    );
 
     const response = await fetch(
-      "https://api.postmarkapp.com/email",
+      "https://api.postmarkapp.com/email/withTemplate",
       {
         method: "POST",
         headers: {
@@ -42,13 +44,10 @@ module.exports = async function handler(req, res) {
         body: JSON.stringify({
           From: "leina@leina-sensei.fr",
           To: "leina@leina-sensei.fr",
-          Subject: "Ton guide gratuit pour débuter le japonais 🇯🇵",
-          TextBody:
-            "Coucou !\n\n" +
-            "Voici ton guide gratuit pour bien débuter le japonais.\n\n" +
-            "Tu le trouveras en pièce jointe de cet email.\n\n" +
-            "Bonne découverte !\n\n" +
-            "Léïna",
+          TemplateId: 48662971,
+          TemplateModel: {
+            prenom: "Léïna"
+          },
           MessageStream: "outbound",
           Attachments: [
             {
@@ -66,17 +65,17 @@ module.exports = async function handler(req, res) {
     return res.status(response.ok ? 200 : 502).json({
       success: response.ok,
       message: response.ok
-        ? "Email avec PDF envoyé"
+        ? "Email de bienvenue envoyé avec le PDF"
         : "Échec de l'envoi",
       postmarkError: response.ok
         ? undefined
         : result.Message
     });
   } catch (error) {
-    console.error("Erreur envoi PDF :", error.message);
+    console.error("Erreur Postmark :", error.message);
 
     return res.status(500).json({
-      error: "Impossible d'envoyer le PDF"
+      error: "Impossible d'envoyer l'email"
     });
   }
-}
+};
