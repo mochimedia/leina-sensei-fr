@@ -156,6 +156,16 @@
 
 <div class="ls-kform">
   <form id="ls-guide-form">
+    
+<input
+  type="text"
+  name="website"
+  tabindex="-1"
+  autocomplete="off"
+  aria-hidden="true"
+  style="position:absolute;left:-9999px;opacity:0;pointer-events:none;"
+>
+
     <fieldset>
       <div class="kajabi-form__form-item">
         <input
@@ -238,8 +248,11 @@ document.getElementById("ls-guide-form")?.addEventListener("submit", async funct
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({ prenom, email })
-    });
+body: JSON.stringify({
+  prenom,
+  email,
+  website: form.elements.website.value
+})    });
 
     if (!response.ok) {
       throw new Error("Inscription impossible");
