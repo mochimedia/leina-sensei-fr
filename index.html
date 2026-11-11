@@ -216,3 +216,50 @@
 </footer>
 
 </div>
+
+<script>
+document.getElementById("ls-guide-form")?.addEventListener("submit", async function(event) {
+  event.preventDefault();
+
+  const form = event.currentTarget;
+  const button = form.querySelector('button[type="submit"]');
+  const message = document.getElementById("ls-guide-message");
+
+  const prenom = form.elements.prenom.value.trim();
+  const email = form.elements.email.value.trim();
+
+  button.disabled = true;
+  button.textContent = "Inscription en cours...";
+  if (message) message.textContent = "";
+
+  try {
+    const response = await fetch("/api/guide-public", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ prenom, email })
+    });
+
+    if (!response.ok) {
+      throw new Error("Inscription impossible");
+    }
+
+    form.reset();
+
+    if (message) {
+      message.textContent = "Merci ! Ton inscription a bien été enregistrée.";
+      message.style.color = "#2e7d32";
+    }
+  } catch (error) {
+    if (message) {
+      message.textContent = "Une erreur est survenue. Réessaie dans quelques instants.";
+      message.style.color = "#b42318";
+    }
+  } finally {
+    button.disabled = false;
+    button.textContent = "Je reçois mon guide gratuit";
+  }
+});
+</script>
+
