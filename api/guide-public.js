@@ -96,14 +96,7 @@ module.exports = async function handler(req, res) {
           TemplateModel: {
             prenom: cleanPrenom
           },
-          MessageStream: "outbound",
-          Attachments: [
-            {
-              Name: "Bien-debuter-le-japonais.pdf",
-              Content: pdf.toString("base64"),
-              ContentType: "application/pdf"
-            }
-          ]
+          MessageStream: "outbound"
         })
       }
     );
